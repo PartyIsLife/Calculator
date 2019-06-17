@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+</head>
+<style>
+
+</style>
+<body>
+<div style="margin-top: 10%; width: 20.5%; height: 30px; margin-left: 39.5%;border: solid 1px black;" id="text1"></div>
+
+<center>
+    <div>
+
+        <button onclick="funk('(')" style="height: 5%; width: 5%; margin-top: 5px;">(</button>
+        <button onclick="funk(')')" style="height: 5%; width: 5%; margin-top: 5px;">)</button>
+        <button onclick="funk('%')" style="height: 5%; width: 5%; margin-top: 5px;">%</button>
+        <button onclick="clear1 ()" style="height: 5%; width: 5%; margin-top: 5px;">AC</button>
+        <br />
+        <button onclick="funk('7')" style="height: 5%; width: 5%; margin-top: 5px;">7</button>
+        <button onclick="funk('8')" style="height: 5%; width: 5%; margin-top: 5px;">8</button>
+        <button onclick="funk('9')" style="height: 5%; width: 5%; margin-top: 5px;">9</button>
+        <button onclick="znak1('/')" style="height: 5%; width: 5%; margin-top: 5px;">/</button>
+        <br />
+        <button onclick="funk('4')" style="height: 5%; width: 5%; margin-top: 5px;">4</button>
+        <button onclick="funk('5')" style="height: 5%; width: 5%; margin-top: 5px;">5</button>
+        <button onclick="funk('6')" style="height: 5%; width: 5%; margin-top: 5px;">6</button>
+        <button onclick="znak1('*')" style="height: 5%; width: 5%; margin-top: 5px;">*</button>
+        <br />
+        <button onclick="funk('1')" style="height: 5%; width: 5%; margin-top: 5px;">1</button>
+        <button onclick="funk('2')" style="height: 5%; width: 5%; margin-top: 5px;">2</button>
+        <button onclick="funk('3')" style="height: 5%; width: 5%; margin-top: 5px;">3</button>
+        <button onclick="znak1('-')" style="height: 5%; width: 5%; margin-top: 5px;">-</button>
+        <br />
+        <button onclick="funk('0')" style="height: 5%; width: 5%; margin-top: 5px; margin-left: -5px">0</button>
+        <button onclick="funk('.')" style="height: 5%; width: 5%; margin-top: 5px;">.</button>
+        <button onclick="znak1('+')" style="height: 5%; width: 5%; margin-top: 5px;">+</button>
+        <button onclick="result1()" style="height: 5%; width: 5%; margin-top: 5px;">=</button>
+
+
+
+
+    </div>
+</center>
+</body>
+<script>
+    x = 0;
+    y = 0;
+        function funk(value) {
+        if (value!=='.'){
+            document.getElementById('text1').innerHTML += value;
+        } else if (!document.getElementById('text1').innerHTML.includes('.')){
+
+            document.getElementById('text1').innerHTML += value;
+        }
+
+
+    }
+    function clear1() {
+        document.getElementById('text1').innerHTML = '';
+
+    }
+    function znak1(znak) {
+            x = document.getElementById('text1').innerHTML;
+            y = znak;
+            document.getElementById('text1').innerHTML = '';
+
+    }
+    function result1() {
+            if (y == '-'){
+                document.getElementById('text1').innerHTML=x-document.getElementById('text1').innerHTML;
+            }
+            if (y == '+'){
+                document.getElementById('text1').innerHTML=parseInt(x)+parseInt(document.getElementById('text1').innerHTML);
+            }
+            if (y == '*'){
+                document.getElementById('text1').innerHTML=x*document.getElementById('text1').innerHTML;
+            }
+            if (y == '/'){
+                document.getElementById('text1').innerHTML=x/document.getElementById('text1').innerHTML;
+            }
+
+
+
+    }
+
+
+
+</script>
+</html>
